@@ -1,6 +1,6 @@
 {
     "name": "bank-project",
-    "homepage": "https://0xrootbeet.github.io/bank-project",
+    "homepage": "https://0xrootbeet.github.io/bank-dapp-boilerplate/",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
