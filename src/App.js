@@ -29,6 +29,7 @@ function App() {
                 console.log("account: ", account);
                 console.log("custAddr: ", customerAddress);
                 console.log("connected: ", isWalletConnected);
+                console.log("is owner: ", isBankerOwner);
                 if (account === customerAddress && isWalletConnected === true) {
                     setCustomerAddress("");
                     setIsWalletConnected(false);
@@ -121,12 +122,14 @@ function App() {
                 let owner;
                 try {
                     owner = await bankContract.bankOwner();
-
                     console.log("owner: ", owner);
                     console.log("custAddr: ", customerAddress);
                     // owner = utils.parseBytes32String(owner);
                     setBankOwnerAddress(owner.toString().toLowerCase());
-                    if (customerAddress === bankOwnerAddress) {
+                    if (
+                        customerAddress === bankOwnerAddress &&
+                        customerAddress !== null
+                    ) {
                         setIsBankerOwner(true);
                     } else {
                         setIsBankerOwner(false);
