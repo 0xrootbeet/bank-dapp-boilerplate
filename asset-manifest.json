@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/bank-dapp-boilerplate/static/css/main.cb7c4c77.css",
-    "main.js": "/bank-dapp-boilerplate/static/js/main.c8d51400.js",
+    "main.js": "/bank-dapp-boilerplate/static/js/main.17327c7c.js",
     "index.html": "/bank-dapp-boilerplate/index.html",
     "main.cb7c4c77.css.map": "/bank-dapp-boilerplate/static/css/main.cb7c4c77.css.map",
-    "main.c8d51400.js.map": "/bank-dapp-boilerplate/static/js/main.c8d51400.js.map"
+    "main.17327c7c.js.map": "/bank-dapp-boilerplate/static/js/main.17327c7c.js.map"
   },
   "entrypoints": [
     "static/css/main.cb7c4c77.css",
-    "static/js/main.c8d51400.js"
+    "static/js/main.17327c7c.js"
   ]
 }
