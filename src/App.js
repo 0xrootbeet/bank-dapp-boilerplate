@@ -118,16 +118,22 @@ function App() {
                     contractABI,
                     signer
                 );
+                let owner;
+                try {
+                    owner = await bankContract.bankOwner();
 
-                let owner = await bankContract.bankOwner();
-                console.log("owner: ", owner);
-                console.log("custAddr: ", customerAddress);
-                // owner = utils.parseBytes32String(owner);
-                setBankOwnerAddress(owner.toString().toLowerCase());
-                if (customerAddress === bankOwnerAddress) {
-                    setIsBankerOwner(true);
-                } else {
-                    setIsBankerOwner(false);
+                    console.log("owner: ", owner);
+                    console.log("custAddr: ", customerAddress);
+                    // owner = utils.parseBytes32String(owner);
+                    setBankOwnerAddress(owner.toString().toLowerCase());
+                    if (customerAddress === bankOwnerAddress) {
+                        setIsBankerOwner(true);
+                    } else {
+                        setIsBankerOwner(false);
+                    }
+                } catch (error) {
+                    console.log("Network Issue");
+                    setBankOwnerAddress("Connect to Rinkeby Testnet");
                 }
             } else {
                 console.log("Ethereum object not found, install Metamask");
@@ -250,7 +256,7 @@ function App() {
                 {" "}
                 <span className="headline-gradient">
                     {" "}
-                    Bank Contract Project{" "}
+                    Bank Dapp Project{" "}
                 </span>{" "}
                 💰{" "}
             </h2>{" "}
